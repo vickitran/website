@@ -24,6 +24,7 @@ h5,
 h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 800;
+ 
 }
 a {
   color: #404040;
@@ -146,7 +147,10 @@ hr.small {
 .intro-header .post-heading,
 .intro-header .page-heading {
   padding: 100px 0 50px;
-  color: white;
+   color: black;
+   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
 }
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading,
@@ -172,6 +176,12 @@ hr.small {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   margin: 10px 0 0;
+   color: #fff;
+    text-shadow:
+    -1px -1px 0 #00f,
+    1px -1px 0 #00f,
+    -1px 1px 0 #00f,
+    1px 1px 0 #00f; 
 }
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading h1,
@@ -200,7 +210,10 @@ hr.small {
   font-size: 20px;
 }
 .intro-header .post-heading .meta a {
-  color: white;
+   color: black;
+   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
 }
 @media only screen and (min-width: 768px) {
   .intro-header .post-heading h1 {
