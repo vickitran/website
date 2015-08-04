@@ -1,0 +1,41 @@
+{
+ "name": "sector",
+ "children": [
+ {
+   "name": "one",
+   "children": [
+    {"name": "Manufacturing", "size": 124610}
+   ]
+  },
+ {
+   "name": "two",
+   "children": [
+    {"name": "Retail", "size": 144540}
+   ]
+  },
+  {
+   "name": "three",
+   "children": [
+    {"name": "Service", "size": 170630}
+   ]
+  },
+  {
+   "name": "four",
+   "children": [
+    {"name": "Office", "size": 662970}
+   ]
+  },
+  {
+   "name": "five",
+   "children": [
+    {"name": "Institutional", "size": 222720}
+   ]
+  },
+  {
+   "name": "six",
+   "children": [
+    {"name": "Other", "size": 47920}
+   ]
+  }
+ ]
+}

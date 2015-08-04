@@ -1,0 +1,17 @@
+{
+ "name": "totalEmployment",
+ "children": [
+ {
+   "name": "flex",
+   "children": [
+    {"name": "Full Time", "size": 1063540}
+   ]
+  },
+ {
+   "name": "fdex",
+   "children": [
+    {"name": "Part Time", "size": 320860}
+   ]
+  }
+ ]
+}
