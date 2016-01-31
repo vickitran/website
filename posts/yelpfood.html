@@ -2,9 +2,9 @@
 <meta charset="utf-8">
 <html lang="en">
 <style>
-	.svg {
-		paint-order: stroke;
-	}
+    .svg {
+        paint-order: stroke;
+    }
 </style>
 <head>
 
@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Using R to Pull Yahoo Stock Finance Symbols</title>
+    <title>Reviewing Toronto's Dinesafe Food Inspection Records</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +36,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 
 </head>
 
@@ -83,7 +83,7 @@
             <div class="row">
                  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1 align="center">Using R to Pull Yahoo Stock Finance Symbols<h1>
+                        <h1 align="center">Reviewing Toronto's Dinesafe Food Inspection Records<h1>
                     </div>
                 </div>
             </div>
@@ -91,30 +91,37 @@
     </header>
  <!-- Post Content -->
     <div class="container">
+
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-100 col-md-offset-1" id = "b">
+                <p>I stumbled across a data science article suggesting projects that utilize local open sourced data, one of the ideas was to predict food inspection grades based on type of restaurant. Unfortunately for me, Toronto's open-source data does not specify the cuisine style of each restaurant.</p>
+                <p>Reading about the infraction details gave me another fun data science project idea. Based on my own experiences, questionably clean "hole in the wall" restaurants often have delicious food. Which leads to the hypothesis I wish to test in this post. <strong>How do Food Inspection Scores correlate with Yelp Reviews?</strong></p>
+                <h3>Data Sources:</h3>
+                Toronto DineSafe has a wonderfully maintained XML report which I have included in the sources below. I wrote a quick Python script (<code>xml_csv.py</code> ) to convert the data into CSV format. Below is a list of collected features and their definition.
+                <br>
+                <ul>
+                    <li><strong>ESTABLISHMENT_NAME</strong> – Business name of the establishment</li>
+                    <li><strong>ESTABLISHMENTTYPE</strong> – Establishment type ie restaurant, mobile cart</li>
+                    <li><strong>ESTABLISHMENT_ADDRESS</strong> – Municipal address of the establishment</li>
+                    <li><strong>INFRACTION_DETAILS</strong> - Description of the Infraction</li>
+                    <li><strong>SEVERITY</strong> - Level of the infraction, i.e. S – Significant, M – Minor, C – Crucial</li>
 
-     			<p>This little side project was born out of my hours of searching for a simple Excel list of stock symbols sorted by sector. I decided to it would be easier to write my own script to do just that.</p>
+                </ul>
+                <p>Collecting Yelp data involved a little more effort. I followed an example listed in the following blog post <a href = "http://letstalkdata.com/2014/02/how-to-use-the-yelp-api-in-python/"> How to use the Yelp API in Python - Let's Talk Data</a>. I created a separate data frame containing only restaurant names and their addresses which was then passed into the Yelp query. In order to guarantee that the right restaurant would be returned, I added "CA" (Canada) as the country code and "Ontario" into the location term. </p>
+                <p>The JSON request was transformed into a Python Dict for accessibility. Assuming that the first result showed the desired restaurant, the rating and address were written to a new CSV file.</p>
 
-				What I used/learned:
-				<ul>
-					<li>Magrittr</li>
-					<li>Rvest </li>
-					<li>XPath </li>
-				</ul>
+                <h3>Cleaning the Data:</h3>
+                <p>A number of issues arose from collecting the Yelp data. It was quite possible to return the wrong restaurant when building the request. If the restaurant does not have a Yelp page, the search yields establishments close to the requested address. After the data was collected, the address from Yelp is compared to the DineSafe <strong>ESTABLISHMENT_ADDRESS</strong> and any mismatches are removed</p>
 
-				<p>Magrittr is a magical operator (%>%) that forwards the result of an expression into another expression. It makes R code easy to read and understand. I used it extensively with rvest’s built in functions to parse through the html document.</p>
 
-				<p>Rvest is a great web scraping library built for R, comparable to Python’s beautifulsoup. I was inspired to write this script based on this <a href =(https://ubuntuincident.wordpress.com/2010/12/17/extract-yahoo-stock-list/)>blog post</a>. I originally chose R because MATLAB slowed down my computer to a crawl and I wanted fast prototyping.</p>
-
-				<p>I used a combination of XPath and CSS Selectors. CSS selectors were useful in picking general elements, however XPath offered more refinement when looking for hyperlinks. </p>
-
-				<p>General Method:
-				The script starts off at the base url (http://biz.yahoo.com/p/)  where the sectors are listed. It collects the hyperlinks of each sector, listed as sector_html. Then it uses the same technique to collect the hyperlinks of each industry in the sector, listed as industry_html. Lastly, it will go through each industry and collect the classified stock symbols. </p>
-
-				<p><a href = https://github.com/asosnovsky/Mean-Value-Opt/blob/master/data_mining/stock_list.R>See it here!</a></p>
-                    </div>
-               </div>
+                 <!-- Sources -->
+                <hr size="4" noshade>
+                <p>
+                <b>Sources</b><br>
+                <a href = "http://www1.toronto.ca/wps/portal/contentonly?vgnextoid=b54a5f9cd70bb210VgnVCM1000003dd60f89RCRD"> Toronto DineSafe - Decemeber 2015</a> <br>
+                <a href = "http://letstalkdata.com/2014/02/how-to-use-the-yelp-api-in-python/"> How to use the Yelp API in Python - Let's Talk Data</a> <br>
+                <a href = "https://www.yelp.ca/developers"> Yelp Developer's API</a> <br>
+                </p>
             </div>
         </div>
     </div>

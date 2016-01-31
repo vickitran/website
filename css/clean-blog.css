@@ -5,7 +5,7 @@
  */
 
 body {
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 20px;
   color: #404040;
 }
@@ -24,7 +24,7 @@ h5,
 h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 800;
- 
+
 }
 a {
   color: #404040;
@@ -181,7 +181,7 @@ hr.small {
     -1px -1px 0 #00f,
     1px -1px 0 #00f,
     -1px 1px 0 #00f,
-    1px 1px 0 #00f; 
+    1px 1px 0 #00f;
 }
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading h1,
