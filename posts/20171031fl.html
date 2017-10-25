@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Reviewing Toronto's Dinesafe Food Inspection Records</title>
+    <title>Implementing Fairness in Machine Learning</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
@@ -37,6 +37,7 @@
     <![endif]-->
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </head>
 
@@ -83,7 +84,7 @@
             <div class="row">
                  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1 align="center">Reviewing Toronto's Dinesafe Food Inspection Records<h1>
+                        <h1 align="center">Implementing Fairness in Machine Learning<h1>
                     </div>
                 </div>
             </div>
@@ -91,18 +92,51 @@
     </header>
  <!-- Post Content -->
     <div class="container">
-
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-100 col-md-offset-1" id = "b">
+                    <h3>Acknowledgements:</h3>
 
-				 <!-- Sources -->
-                <hr size="4" noshade>
-                <p>
-                <b>Sources</b><br>
-                <a href = "http://www1.toronto.ca/wps/portal/contentonly?vgnextoid=b54a5f9cd70bb210VgnVCM1000003dd60f89RCRD"> Toronto DineSafe - Decemeber 2015</a> <br>
-                <a href = "http://bl.ocks.org/mbostock/4063269"> Circle Padding - D3 Example </a> <br>
-                <a href = "http://bl.ocks.org/mbostock/24bdd02df2a72866b0ec"> Named Transitions - D3</a> <br>
-                </p>
+                    The following project is based on the amazing work done by <a href="https://arxiv.org/pdf/1710.05578.pdf">Fair Kernel Learning </a>
+
+                    <h3>Motivation:</h3>
+
+                    <p>Algorithm predictive modelling is utilized in multiple industries enhancing or replacing expert human decision making. Some models have been criticized for perpetuating inequality hidden in the underlying data. A notable example is Propublica’s article : <a href = “https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing”> Machine Bias,</a> a detailed investivgation highlighting a racial bias in a crime predicting software tool. There’s a large and exciting academic research centered around this topic: <a href = “https://www.fatml.org/”> Fairness, Accountability, and Transparency in Machine Learning </a>.</p>
+
+                    <p>This is my own small contribution to make cutting edge research accessible for machine learning enthusiasts, who may not have as much free time as I do.</p>
+
+
+                    <h3>Summary:</h3>
+
+                    <p>The paper's scientific contribution is divided into three sections. The authors performed all experiements in MATLAB. I've written a Python equivalent here!</p>
+
+                    <ul>
+                    <li>Fair Linear Regression</li>
+                    <li>Fair Kernel Regression</li>
+                    <li>Fair Dimensionality Regression</li>
+                    </ul>
+
+                    In the next sections, I'll walk through each concept with a tiny bit of math and a worked example with <a href='https://www.ibm.com/communities/analytics/watson-analytics-blog/hr-employee-attrition/'>HR sample data. </a>
+
+                    <p>The techniques aim to minimize disparate impact, in which certain individuals belonging to a protected group (race,sex, religion) receive unfavourable treatment more often than non-protected groups.</p> As mentioned in the paper, a model is <i>totally fair</i>
+                    <blockquote>if the predictions are statistically independent of the sensitive (protected features)<p>—(Perez-Suay 2017)</p></blockquote>
+
+
+                    <h3>Fair Linear Regression Framework:</h3>
+
+                    The objective is to predict a <i>target value</i> (\(y\)) based on a set of <i>features</i>. (\(X\)) The
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+               </div>
             </div>
         </div>
     </div>
