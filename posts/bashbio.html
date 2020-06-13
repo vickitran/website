@@ -1,6 +1,11 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
 <html lang="en">
-
+<style>
+	.svg {
+		paint-order: stroke;
+	}
+</style>
 <head>
 
     <meta charset="utf-8">
@@ -9,20 +14,20 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Post Index</title>
+    <title>Bash and Bioinformatics - A Self Guided Tour</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link href="../../css/clean-blog.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-    <link rel="icon" href="img/favicon.ico" type="image/ico" sizes="16x16">
+    <link rel="icon" href="../../img/favicon.ico" type="image/ico" sizes="16x16">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,11 +36,12 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+
 </head>
 
 <body>
-
-    <!-- Navigation -->
+  <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -46,23 +52,23 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Math and Stuff</a>
+                <a class="navbar-brand" href="../../index.html">Math and Stuff</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="../../index.html">Home</a>
                     </li>
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="../../about.html">About</a>
                     </li>
                     <li>
-                        <a href="postindex.html">Blog</a>
+                        <a href="../../post.html">Blog</a>
                     </li>
                     <li>
-                        <a href="project.html">Projects</a>
+                        <a href="../../project.html">Projects</a>
                     </li>
                 </ul>
             </div>
@@ -70,71 +76,46 @@
         </div>
         <!-- /.container -->
     </nav>
-
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/post-bg.jpg')">
+    <header class="intro-header" style="background-image: url('../../img/post-bg.jpg')">
         <div class="container">
             <div class="row">
                  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1 align="center">Never trust anyone who doesn't write a blog. (irregularly)</h1>
+                        <h1 align="center">Bash and Bioinformatics - A Self Guided Tour<h1>
                     </div>
                 </div>
             </div>
         </div>
     </header>
- <!-- Main Content -->
+ <!-- Post Content -->
     <div class="container">
+
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-preview">
-                    <a href="posts/bashbio.html">
-                        <h2 class="post-title">
-                           Bash and Bioinformatics - A Self Guided Tour
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Using Bash to Solve Rosalind Problems
-                        </h3>
-                    </a>
+            <div class="col-lg-8 col-lg-offset-2 col-md-100 col-md-offset-1" id = "b">
+                <p>I have always viewed Bash to be a mythical black box commanded by consonants. Here's my ongoing attempt to break that misconception.</p>
 
-                    <a href="posts/20170201_wineR.html">
-                        <h2 class="post-title">
-                           Wine Quality Chemometrics
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Using PLS Regression to Predict Wine Quality
-                        </h3>
-                    </a>
-                     <a href="posts/comap.html">
-                        <h2 class="post-title">
-                           Tackling Big Data in 72 Hours
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Ranking U.S Post-Secondary Institutions - COMAP 2016 Entry
-                        </h3>
-                    </a>
-                </div>
-                <div class="post-preview">
-                    <a href="posts/20151110_ryahoo.html">
-                        <h2 class="post-title">
-                           Using R to Pull Yahoo Stock Finance Symbols
+                <p><a href="http://rosalind.info/about/">ROSALIND</a> is a collection of Bioinformatics themed programming puzzles. Each puzzle also contains a short description
+                of the puzzle's bioinformatic concept. Based on this <a href="http://omgenomics.com/programming-languages/">article</a>, a bioinformatician's toolkit typically includes Python, R and Bash. ROSALIND serves as an interactive textbook to learn BASH and biology at the same time.</p>
 
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Rvest : R's Web Scraping Magic Hat
-                        </h3>
-                    </a>
-                </div>
+                <p>In this post, I will be keeping a record of all the useful commands I have learned while solving various puzzles.</p>
+
+                <h3>Commands + Description:</h3>
                 <hr>
+                <kbd>wc -{x}</kbd>
+                <p>Count the number of newlines, word count, characters, bytes in a given input stream. -{x} specifies what is to be counted.
+                </p>
+                <p><h4>Neat Trick</h4>
+                wc can be used to count the number of files in a directory. <br><kbd>ls {directory} | wc -l</kbd></p>
+                <hr>
+                <kbd>tr {to_be_replaced} {replacement}</kbd>
+                <p> Replace or remove in a given input stream.
+                </p>
+                <p><h4>Neat Trick</h4>
+                tr can change strings from lower case to upper case and vice versa<br><kbd>tr [:lower] [:upper] < {input}</kbd></p>
 
-                <hr><!-- need to put in between posts-->
-                <!-- Pager -->
-                <!-- <ul class="pager">
-                    <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
-                    </li>
-                </ul>-->
+
             </div>
         </div>
     </div>
@@ -169,14 +150,12 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="js/clean-blog.min.js"></script>
-
+    <script src="../../js/clean-blog.min.js"></script>
 </body>
-
 </html>
